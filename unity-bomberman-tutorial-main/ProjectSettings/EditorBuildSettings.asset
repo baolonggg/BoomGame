@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 6508a70042af0c24985dba07c204a86d
+  - enabled: 0
+    path: Assets/Scenes/Lobby.unity
+    guid: 81f96a07a11103241890cc1cba64ccbf
   - enabled: 1
     path: Assets/Scenes/Bomberman.unity
     guid: 2cda990e2423bbf4892e6590ba056729

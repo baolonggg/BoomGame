@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
 public class Login : MonoBehaviour
 {
@@ -12,7 +13,17 @@ public class Login : MonoBehaviour
     public InputField passwordInput;
     public Button loginButton;
     public Button goToRegisterButton;
-
+    public static Login instance;
+    public void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != null)
+        {
+            Debug.Log("Instance already exists, destroying object!");
+            Destroy(this);
+        }
+    }
     ArrayList credentials;
 
     void Start()
@@ -62,6 +73,7 @@ public class Login : MonoBehaviour
     }
     void loadMainMenu()
     {
+        Client.instance.ConnectToServer();
         SceneManager.LoadScene("MainMenu");
     }
 
